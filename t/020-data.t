@@ -1,5 +1,5 @@
-use strict;
-use warnings;
+use strict; use warnings;
+
 use Test::More tests => 1;
 use Parallel::Iterator qw( iterate_as_array );
 

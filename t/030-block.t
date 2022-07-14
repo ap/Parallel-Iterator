@@ -1,9 +1,9 @@
-use strict;
-use warnings;
-use IO::Handle;
-use POSIX qw(:errno_h);
+use strict; use warnings;
+
 use Test::More;
 use Parallel::Iterator qw( iterate_as_array );
+use IO::Handle;
+use POSIX qw(:errno_h);
 
 my $buffer_size = get_pipe_buffer_size();
 plan 'skip_all' => "Can't calculate buffer size"

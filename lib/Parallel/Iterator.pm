@@ -1,14 +1,12 @@
+use 5.008; use warnings; use strict;
+
 package Parallel::Iterator;
 
-use warnings;
-use strict;
 use Carp;
 use Storable qw( store_fd fd_retrieve dclone );
 use IO::Handle;
 use IO::Select;
 use Config;
-
-require 5.008;
 
 our $VERSION = '1.00';
 use base qw( Exporter );

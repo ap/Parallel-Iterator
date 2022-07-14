@@ -1,5 +1,5 @@
-use strict;
-use warnings;
+use strict; use warnings;
+
 use Test::More tests => 13;
 use Parallel::Iterator qw( iterate iterate_as_array iterate_as_hash );
 
