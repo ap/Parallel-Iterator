@@ -141,9 +141,9 @@ value pairs:
 If the returned iterator is inconvenient you can get back a hash or
 array instead:
 
-    my @done = iterate_as_array( \&fetch, @urls );
+    my @done = iterate_as_array( \&fetch, \@urls );
 
-    my %done = iterate_as_hash( \&worker, %jobs );
+    my %done = iterate_as_hash( \&worker, \%jobs );
 
 =head2 How It Works
 
@@ -171,7 +171,7 @@ process. That means that things like this won't work as expected:
         my ($id, $name) = @_;
         $tally{$name}++;       # might not do what you think it does
         return reverse $name;
-    }, @names );
+    }, \@names );
 
     # Now print out the tally...
     while ( my ( $name, $count ) = each %tally ) {
