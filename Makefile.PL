@@ -23,3 +23,10 @@ WriteMakefile(
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES    => 'Parallel-Iterator-*' },
 );
+
+sub MY::postamble { -f 'META.yml' ? return : <<'' }
+create_distdir : MANIFEST
+distdir        : MANIFEST
+MANIFEST :
+	( echo MANIFEST ; git ls-files ) | sort -f > MANIFEST
+
