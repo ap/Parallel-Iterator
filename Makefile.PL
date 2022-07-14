@@ -20,6 +20,7 @@ WriteMakefile(
         'IO::Select' => 0,
         'Config'     => 0,
     },
+    MIN_PERL_VERSION => '5.008',
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES    => 'Parallel-Iterator-*' },
 );
