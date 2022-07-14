@@ -81,7 +81,7 @@ Write a function that retrieves a URL and returns its contents or undef
 if it can't be fetched:
 
     sub fetch {
-        my $url = shift;
+        my ($id, $url) = @_;
         my $resp = $ua->get($url);
         return unless $resp->is_success;
         return $resp->content;
