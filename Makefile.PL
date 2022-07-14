@@ -5,6 +5,11 @@ my %META = (
 	author      => 'Andy Armstrong <andy@hexten.net>',
 	license     => 'perl_5',
 	prereqs     => {
+		test => {
+			requires => {qw(
+				Test::More         0
+			)},
+		},
 		runtime => {
 			requires => {qw(
 				perl           5.008
@@ -12,10 +17,10 @@ my %META = (
 				IO::Handle         0
 				IO::Select         0
 				Storable           0
-				Test::More         0
 			)},
 		},
 	},
+	dynamic_config => 0,
 );
 
 sub MY::postamble { -f 'META.yml' ? return : <<'' }
