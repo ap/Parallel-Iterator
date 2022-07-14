@@ -1,5 +1,8 @@
 use 5.008; use strict; use warnings;
 
+my $sc = q<https://github.com/ap/Parallel-Iterator>;
+my $bt = q<https://rt.cpan.org/Public/Dist/Display.html?Name=Parallel-Iterator>;
+
 my %META = (
 	name        => 'Parallel-Iterator',
 	author      => 'Andy Armstrong <andy@hexten.net>',
@@ -21,6 +24,11 @@ my %META = (
 		},
 	},
 	dynamic_config => 0,
+	resources      => {
+		repository => { type => 'git', url => "$sc.git", web => $sc },
+		bugtracker => { web => $bt },
+		license    => [ 'http://dev.perl.org/licenses/' ],
+	},
 );
 
 sub MY::postamble { -f 'META.yml' ? return : <<'' }
