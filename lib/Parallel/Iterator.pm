@@ -9,7 +9,8 @@ use IO::Select;
 use Config;
 
 our $VERSION = '1.00';
-use base qw( Exporter );
+
+use Exporter (); *import = \&Exporter::import;
 our @EXPORT_OK = qw( iterate iterate_as_array iterate_as_hash );
 
 use constant IS_WIN32 => ( $^O =~ /^(MS)?Win32$/ );
