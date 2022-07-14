@@ -6,6 +6,7 @@ my $bt = q<https://rt.cpan.org/Public/Dist/Display.html?Name=Parallel-Iterator>;
 my %META = (
 	name        => 'Parallel-Iterator',
 	author      => 'Andy Armstrong <andy@hexten.net>',
+	x_copyright => { holder => 'Andy Armstrong', year => 2007 },
 	license     => 'perl_5',
 	prereqs     => {
 		test => {
@@ -33,9 +34,12 @@ my %META = (
 
 sub MY::postamble { -f 'META.yml' ? return : <<'' }
 create_distdir : MANIFEST
-distdir        : MANIFEST
 MANIFEST :
 	( echo MANIFEST ; git ls-files ) | sort -f > MANIFEST
+distdir : boilerplate
+.PHONY  : boilerplate
+boilerplate : distmeta
+	$(PERL) -Ilib boilerplate.pl $(DISTVNAME)
 
 ## BOILERPLATE ###############################################################
 require ExtUtils::MakeMaker;
