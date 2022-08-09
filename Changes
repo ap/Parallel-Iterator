@@ -1,5 +1,9 @@
 Release history for Parallel-Iterator
 
+1.002 Tue 09 Aug 2022
+	- No functional changes
+	- Packaging fix to stop installing boilerplate.pl
+
 1.001 Fri 15 Jul 2022
 	- No more subclassing of Exporter
 	- Documentation fixes (including RT#67597; thanks to Richard Ganski)
