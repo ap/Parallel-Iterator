@@ -11,16 +11,16 @@ my %META = (
 	prereqs     => {
 		test => {
 			requires => {qw(
-				Test::More         0
+				Test::More 0
 			)},
 		},
 		runtime => {
 			requires => {qw(
-				perl           5.008
-				Config             0
-				IO::Handle         0
-				IO::Select         0
-				Storable           0
+				perl 5.008
+				Config 0
+				IO::Handle 0
+				IO::Select 0
+				Storable 0
 			)},
 		},
 	},
